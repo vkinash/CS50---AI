@@ -1,5 +1,5 @@
 <h3>1. Degrees</h3>
-```commandline
+```
 $ python degrees.py large
 Loading data...
 Data loaded.
@@ -20,7 +20,9 @@ We can frame this as a search problem: our states are people. Our actions are mo
 <h3>2. Tic-Tac-Toe</h3>
 
 <h3>3. Knights</h3>
-```python puzzle.py```
+```
+python puzzle.py
+```
 
 <h3>Background</h3>
 In 1978, logician Raymond Smullyan published “What is the name of this book?”, a book of logical puzzles. Among the puzzles in the book were a class of puzzles that Smullyan called “Knights and Knaves” puzzles.
@@ -37,7 +39,9 @@ That puzzle was on the simpler side. With more characters and more sentences, th
 
 
 <h3>4. Minesweeper</h3>
-```python minesweeper/runner.py```
+```
+python minesweeper/runner.py
+```
 <h3>Background</h3>
 <h4>Minesweeper</h4>
 Minesweeper is a puzzle game that consists of a grid of cells, where some of the cells contain hidden “mines.” Clicking on a cell that contains a mine detonates the mine, and causes the user to lose the game. Clicking on a “safe” cell (i.e., a cell that does not contain a mine) reveals a number that indicates how many neighboring cells – where a neighbor is a cell that is one square to the left, right, up, down, or diagonal from the given cell – contain a mine.
@@ -114,7 +118,7 @@ More generally, any time we have two sentences set1 = count1 and set2 = count2 w
 
 So using this method of representing knowledge, we can write an AI agent that can gather knowledge about the Minesweeper board, and hopefully select cells it knows to be safe!
 <h3>5. PageRank</h3>
-```commandline
+```
 $ python pagerank/pagerank.py corpus0
 PageRank Results from Sampling (n = 10000)
   1.html: 0.2223
@@ -170,7 +174,7 @@ How would we go about calculating PageRank values for each page, then? We can do
 
 In this project, you’ll implement both such approaches for calculating PageRank – calculating both by sampling pages from a Markov Chain random surfer and by iteratively applying the PageRank formula.
 <h3>6. Heredity</h3>
-```commandline
+```
 $ python heredity/heredity.py heredity/data/family0.csv
 Harry:
   Gene:
@@ -211,7 +215,7 @@ Your task in this project is to use this model to make inferences about a popula
 
 
 <h3>7. Crossword</h3>
-```commandline
+```
 $ python crossword/generate.py crossword/data/structure1.txt data/words1.txt output.png
 ██████████████
 ███████M████R█
@@ -247,7 +251,7 @@ How do we measure the accuracy of a system like this? If we have a testing data 
 
 Instead, we’ll measure two values: sensitivity (also known as the “true positive rate”) and specificity (also known as the “true negative rate”). Sensitivity refers to the proportion of positive examples that were correctly identified: in other words, the proportion of users who did go through with a purchase who were correctly identified. Specificity refers to the proportion of negative examples that were correctly identified: in this case, the proportion of users who did not go through with a purchase who were correctly identified. So our “always guess no” classifier from before would have perfect specificity (1.0) but no sensitivity (0.0). Our goal is to build a classifier that performs reasonably on both metrics.
 <h3>8. Nim</h3>
-```commandline
+```
 $ python nim/play.py
 Playing training game 1
 Playing training game 2
@@ -276,12 +280,12 @@ In particular, we’ll use Q-learning for this project. Recall that in Q-learnin
 How will we represent the states and actions inside of a Python program? A “state” of the Nim game is just the current size of all of the piles. A state, for example, might be [1, 1, 3, 5], representing the state with 1 object in pile 0, 1 object in pile 1, 3 objects in pile 2, and 5 objects in pile 3. An “action” in the Nim game will be a pair of integers (i, j), representing the action of taking j objects from pile i. So the action (3, 5) represents the action “from pile 3, take away 5 objects.” Applying that action to the state [1, 1, 3, 5] would result in the new state [1, 1, 3, 0] (the same state, but with pile 3 now empty).
 
 Recall that the key formula for Q-learning is below. Every time we are in a state s and take an action a, we can update the Q-value Q(s, a) according to:
-```commandline
+```
 Q(s, a) <- Q(s, a) + alpha * (new value estimate - old value estimate)
 ```
 In the above formula, alpha is the learning rate (how much we value new information compared to information we already have). The new value estimate represents the sum of the reward received for the current action and the estimate of all the future rewards that the player will receive. The old value estimate is just the existing value for Q(s, a). By applying this formula every time our AI takes a new action, over time our AI will start to learn which actions are better in any state.
 <h3>9. Traffic</h3>
-```commandline
+```
 $ python traffic/traffic.py traffic/gtsrb
 Epoch 1/10
 500/500 [==============================] - 5s 9ms/step - loss: 3.7139 - accuracy: 0.1545
@@ -313,7 +317,7 @@ In this project, you’ll use TensorFlow to build a neural network to classify r
 Several such data sets exist, but for this project, we’ll use the German Traffic Sign Recognition Benchmark (GTSRB) dataset, which contains thousands of images of 43 different kinds of road signs.
 
 <h3>9. Parser</h3>
-```commandline
+```
 $ python parser/parser.py
 Sentence: Holmes sat.
         S
@@ -333,14 +337,14 @@ A common task in natural language processing is parsing, the process of determin
 In this problem, we’ll use the context-free grammar formalism to parse English sentences to determine their structure. Recall that in a context-free grammar, we repeatedly apply rewriting rules to transform symbols into other symbols. The objective is to start with a nonterminal symbol S (representing a sentence) and repeatedly apply context-free grammar rules until we generate a complete sentence of terminal symbols (i.e., words). The rule S -> N V, for example, means that the S symbol can be rewritten as N V (a noun followed by a verb). If we also have the rule N -> "Holmes" and the rule V -> "sat", we can generate the complete sentence "Holmes sat.".
 
 Of course, noun phrases might not always be as simple as a single word like "Holmes". We might have noun phrases like "my companion" or "a country walk" or "the day before Thursday", which require more complex rules to account for. To account for the phrase "my companion", for example, we might imagine a rule like:
-```commandline
+```
 NP -> N | Det N
 ```
 In this rule, we say that an NP (a “noun phrase”) could be either just a noun (N) or a determiner (Det) followed by a noun, where determiners include words like "a", "the", and "my". The vertical bar (|) just indicates that there are multiple possible ways to rewrite an NP, with each possible rewrite separated by a bar.
 
 To incorporate this rule into how we parse a sentence (S), we’ll also need to modify our S -> N V rule to allow for noun phrases (NPs) as the subject of our sentence. See how? And to account for more complex types of noun phrases, we may need to modify our grammar even further.
 <h3>10. Attention</h3>
-```commandline
+```
 $ python attention/mask.py
 Text: We turned down a narrow lane and passed through a small [MASK].
 We turned down a narrow lane and passed through a small field.
