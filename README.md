@@ -252,23 +252,7 @@ How do we measure the accuracy of a system like this? If we have a testing data 
 Instead, we’ll measure two values: sensitivity (also known as the “true positive rate”) and specificity (also known as the “true negative rate”). Sensitivity refers to the proportion of positive examples that were correctly identified: in other words, the proportion of users who did go through with a purchase who were correctly identified. Specificity refers to the proportion of negative examples that were correctly identified: in this case, the proportion of users who did not go through with a purchase who were correctly identified. So our “always guess no” classifier from before would have perfect specificity (1.0) but no sensitivity (0.0). Our goal is to build a classifier that performs reasonably on both metrics.
 <h3>8. Nim</h3>
 ```
-$ python nim/play.py
-Playing training game 1
-Playing training game 2
-Playing training game 3
-...
-Playing training game 9999
-Playing training game 10000
-Done training
-
-Piles:
-Pile 0: 1
-Pile 1: 3
-Pile 2: 5
-Pile 3: 7
-
-AI's Turn
-AI chose to take 1 from pile 2.
+python nim/play.py
 ```
 <h3>Background</h3>
 Recall that in the game Nim, we begin with some number of piles, each with some number of objects. Players take turns: on a player’s turn, the player removes any non-negative number of objects from any one non-empty pile. Whoever removes the last object loses.
