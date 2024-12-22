@@ -1,6 +1,6 @@
 <h3>1. Degrees</h3>
 ```
-$ python degrees.py large
+$ python degrees/degrees.py large
 Loading data...
 Data loaded.
 Name: Emma Watson
@@ -21,7 +21,7 @@ We can frame this as a search problem: our states are people. Our actions are mo
 
 <h3>3. Knights</h3>
 ```
-python puzzle.py
+python knights/puzzle.py
 ```
 
 <h3>Background</h3>
