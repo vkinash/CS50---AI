@@ -256,7 +256,7 @@ $ python nim/play.py
 Playing training game 1
 Playing training game 2
 Playing training game 3
-...
+. . .
 Playing training game 9999
 Playing training game 10000
 Done training
